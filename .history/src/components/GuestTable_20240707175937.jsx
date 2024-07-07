@@ -9,7 +9,6 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { tokens } from '../theme';
 import { useTheme } from '@mui/material';
 import useGuestList from '../utils/GuestListHandler';
-import { v4 as uuidv4 } from 'uuid';
 
 const GuestTable = () => {
   const theme = useTheme();
@@ -59,7 +58,7 @@ const GuestTable = () => {
   };
 
   const columns = [
-    // { field: 'id', headerName: 'ID', type: 'number', flex: 0.5 },
+    { field: 'id', headerName: 'ID', type: 'number', flex: 0.5 },
     {
       field: 'Name',
       headerName: 'Name',

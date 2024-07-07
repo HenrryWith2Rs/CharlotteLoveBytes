@@ -59,7 +59,7 @@ const GuestTable = () => {
   };
 
   const columns = [
-    // { field: 'id', headerName: 'ID', type: 'number', flex: 0.5 },
+    { field: 'id', headerName: 'ID', type: 'number', flex: 0.5 },
     {
       field: 'Name',
       headerName: 'Name',

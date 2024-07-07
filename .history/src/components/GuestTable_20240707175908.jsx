@@ -9,7 +9,6 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { tokens } from '../theme';
 import { useTheme } from '@mui/material';
 import useGuestList from '../utils/GuestListHandler';
-import { v4 as uuidv4 } from 'uuid';
 
 const GuestTable = () => {
   const theme = useTheme();
@@ -53,13 +52,8 @@ const GuestTable = () => {
     setSelectedGuest({ ...selectedGuest, [name]: value });
   };
 
-  const handleAddGuest = () => {
-    setSelectedGuest({ id: uuidv4(), Name: '', Team: '', Food: '', RSVP: '', Table: '', Seat: '' });
-    setOpen(true);
-  };
-
   const columns = [
-    // { field: 'id', headerName: 'ID', type: 'number', flex: 0.5 },
+    { field: 'id', headerName: 'ID', type: 'number', flex: 0.5 },
     {
       field: 'Name',
       headerName: 'Name',
@@ -135,13 +129,9 @@ const GuestTable = () => {
 
   return (
     <Box m="20px">
-      <Box display="flex" justifyContent="center" mb="20px">
-        <Button variant="contained" color="primary" onClick={handleAddGuest}>
-          Add Guest
-        </Button>
-      </Box>
       <Box
-        height="75vh"
+        m="40px 0 0 0"
+        height="99vh"
         sx={{
           '& .MuiDataGrid-root': {
             border: 'none',
