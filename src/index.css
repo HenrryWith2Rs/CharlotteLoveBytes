@@ -1,41 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Source+Code+Pro:wght@400;600;700&display=swap');
-
-html,
-body,
-#root,
-.app,
-.content {
-  height: 100%;
-  width: 100%;
-  font-family: 'Source Sans Pro', sans-serif;
-  /* background: linear-gradient(45deg, #ffa500, #000000); */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
-.app {
-  display: flex;
-  position: relative;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+img {
+  width: 40%;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #e0e0e0;
+h2 {
+  text-align: center;
+  font-family: cubano, sans-serif;
+  font-weight: 400;
+  color: white;
+  font-size: 10vw;
+	text-shadow: -0.04em 0.04em 0 #000,
+				  0.04em 0.04em 0 #000,
+				 0.04em -0.04em 0 #000,
+				-0.04em -0.04em 0 #000;
 }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.onTheBooksHeader {
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #ccc;
-}
+  

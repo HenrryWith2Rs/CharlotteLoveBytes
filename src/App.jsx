@@ -1,27 +1,57 @@
-import { useState } from 'react';
-import './App.css';
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import { ColorModeContext, useMode } from './theme';
-import GuestTable from './components/GuestTable';
-import Topbar from './scenes/global/Topbar';
-import Sidebar from './scenes/global/Sidebar';
+import { useRef } from 'react';
+import moon from './moon.png';
+import land from './land.png';
+import cat from './cat.gif';
+
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 function App() {
-  const [theme, colorMode] = useMode();
-  const [isSidebar, setIsSidebar] = useState(true);
+  const ref = useRef();
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <div className="app">
-          <main className="content">
-            <Topbar setIsSidebar={setIsSidebar} />
-            <GuestTable />
-          </main>
-        </div>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+    <div>
+      <Parallax pages={4} ref={ref}>
+        {/* <ParallaxLayer speed={1}>
+            <h2>Welcome to my website</h2>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1} speed={0.5}>
+            <h2>Web development is fun!</h2>
+        </ParallaxLayer> */}
+
+        <ParallaxLayer
+          offset={0}
+          speed={1}
+          factor={2}
+          style={{
+            backgroundImage: `url(${moon})`,
+            backgroundSize: 'cover',
+          }}
+        />
+
+        <ParallaxLayer
+          offset={2}
+          speed={1}
+          factor={4}
+          style={{
+            backgroundImage: `url(${land})`,
+            backgroundSize: 'cover',
+          }}
+        ></ParallaxLayer>
+
+        <ParallaxLayer sticky={{ start: 0.9, end: 2.5 }} style={{ textAlign: 'center' }}>
+          <img src={cat} />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={0.2} speed={0.05} onClick={() => ref.current.scrollTo(3)}>
+          <h2>Henrry & Maylin 💒</h2>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={3} speed={2} onClick={() => ref.current.scrollTo(0)}>
+          <h2>Nov 24, 2024</h2>
+        </ParallaxLayer>
+      </Parallax>
+    </div>
   );
 }
 
